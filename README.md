@@ -9,7 +9,7 @@ Ember CLI addons that provides a clean and easy way to integrate your Ember appl
 
 ## Configuration/Logging
 
-There is one option available to configure the events log tracking, the default value is `false`. This option is optional, but recommended.
+There is an option available to configure the events log tracking, the default value is `false`. This option is optional, but recommended.
 
 In your `config/environment.js`
 
@@ -18,6 +18,15 @@ ENV['segment'] = {
   LOG_EVENT_TRACKING: true
 };
 
+```
+
+There is a second option available to enable the default page tracking on the application.didTransition event. If you do not enable this
+option then no tracking events will be sent by default to Segment. You will have to add your own tracking calls.
+
+```js
+ENV['segment'] = {
+  defaultPageTrack: true
+};
 ```
 
 ## Usage
